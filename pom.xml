@@ -1,41 +1,51 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>MysqlTomcat</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>MysqlTomcat Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-      <!-- Dependencia para MySQL -->
-      <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.33</version> <!-- Usar la versión correspondiente -->
-      </dependency>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-      <!-- Dependencia para Servlets/JSP -->
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>4.0.1</version> <!-- O la versión correspondiente -->
-        <scope>provided</scope>
-      </dependency>
+    <groupId>com.miempresa</groupId>
+    <artifactId>mi-aplicacion</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-      <!-- Dependencia para JSTL (si usas etiquetas JSTL) -->
-      <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>javax.servlet.jsp-api</artifactId>
-        <version>2.3.3</version> <!-- O la versión correspondiente -->
-        <scope>provided</scope>
-      </dependency>
+    <dependencies>
+        <!-- Dependencia para Servlet (Jakarta EE 9.0.0) -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
+            <scope>provided</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+        <!-- Controlador JDBC de MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!-- Dependencia para Hibernate (opcional, si usas ORM) -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.10.Final</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <!-- Repositorio de Jakarta EE (en caso de que no se encuentre en el repositorio central) -->
+        <repository>
+            <id>jakarta-repo</id>
+            <url>https://repo.eclipse.org/content/repositories/jakarta-releases/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+
+        </plugins>
+    </build>
 </project>
+
+

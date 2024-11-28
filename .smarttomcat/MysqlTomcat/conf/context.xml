@@ -15,11 +15,10 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<!-- The contents of this file will be loaded for each web application -->
 <Context>
 
-    <!-- Default set of monitored resources. If one of these changes, the    -->
-    <!-- web application will be reloaded.                                   -->
+    <!-- Default set of monitored resources. If one of these changes, the -->
+    <!-- web application will be reloaded. -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
@@ -28,18 +27,16 @@
     <!--
     <Manager pathname="SESSIONS.ser" />
     -->
-</Context>
-<Context>
+
     <!-- Configuración de la conexión a la base de datos MySQL -->
-    <Resource name="jdbc/MiBaseDeDatos"
+    <Resource name="jdbc/usuarios_db"
               auth="Container"
               type="javax.sql.DataSource"
-              username="root"         <!-- Usuario de la base de datos -->
-              password="bootcamp0084"     <!-- Contraseña de la base de datos -->
-              driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/mi_base_de_datos"
-              maxTotal="20"
-              maxIdle="10"
-              maxWaitMillis="-1" />
+              username="root"        <!-- Usuario de la base de datos -->
+              password="bootcamp0084"  <!-- Contraseña de la base de datos -->
+    driverClassName="com.mysql.cj.jdbc.Driver"
+    url="jdbc:mysql://localhost:3306/usuarios_db"
+    maxTotal="20"
+    maxIdle="10"
+    maxWaitMillis="-1" />
 </Context>
-
