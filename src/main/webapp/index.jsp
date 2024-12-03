@@ -1,4 +1,5 @@
-<%@ page import="java.util.*, yourpackage.User" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.alumnos.Usuario" %>
 <html>
 <head>
     <title>Lista de Usuarios</title>
@@ -7,21 +8,23 @@
     <h1>Lista de Usuarios</h1>
     <%
         // Obtener la lista de usuarios que el Servlet ha pasado
-        List<User> users = (List<User>) request.getAttribute("users");
+        List<Usuario> users = (List<Usuario>) request.getAttribute("users");
 
-        if (users == null || users.isEmpty()) {
-            out.println("<p>No hay usuarios disponibles.</p>");
+        if (users == null || users.isEmpty()) {%>
+
+            <p>No hay usuarios disponibles.</p>
+    <%
         } else {
-            out.println("<table border='1'>");
-            out.println("<tr><th>ID</th><th>Nombre</th><th>Email</th></tr>");
-            for (User user : users) {
-                out.println("<tr>");
-                out.println("<td>" + user.getId() + "</td>");
-                out.println("<td>" + user.getNombre() + "</td>");
-                out.println("<td>" + user.getEmail() + "</td>");
-                out.println("</tr>");
+            System.out.println("<table border='1'>");
+            System.out.println("<table border='1'>");
+            for (Usuario user : users) {
+                System.out.println("<tr>");
+                System.out.println("<td>" + user.getId() + "</td>");
+                System.out.println("<td>" + user.getNombre() + "</td>");
+                System.out.println("<td>" + user.getEmail() + "</td>");
+                System.out.println("</tr>");
             }
-            out.println("</table>");
+            System.out.println("</table>");
         }
     %>
 </body>
